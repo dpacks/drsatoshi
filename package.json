@@ -1,0 +1,34 @@
+{
+  "name": "@dpack/drsatoshi",
+  "version": "0.1.1",
+  "description": "Doctor of choice for the dWeb Network.",
+  "contributors": [
+    "Jared Rice Sr. <jared@dwebs.io>",
+    "Distributed Webs Project, LLC. <labs@distributedwebs.org>"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "bin": {
+    "satoshi": "cli.js"
+  },
+  "dependencies": {
+    "@distdns/server": "distdns/server#master",
+    "@dpack/logger": "dpacks/logger#master",
+    "@dpack/jobs": "dpacks/jobs#master",
+    "@dwcore/channel": "distributedweb/channel#master",
+    "@dwcore/dethunk": "dwcore/dethunk#master",
+    "@flockcore/core": "flockcore/core#master",
+    "@flockcore/presets": "flockcore/presets#master",
+    "chalk": "^2.3.2",
+    "debug": "^3.1.0",
+    "figures": "^2.0.0",
+    "menu-string": "^1.2.0",
+    "minimist": "^1.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
