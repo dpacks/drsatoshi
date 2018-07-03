@@ -6,9 +6,9 @@ var crypto = require('crypto')
 var os = require('os')
 var chalk = require('chalk')
 var Menu = require('menu-string')
-var debug = require('debug')('@dpack/jobs')
-var defaultTasks = require('./lib/tasks-default')
-var peerTasks = require('./lib/tasks-peer')
+var debug = require('debug')('@dpack/drsatoshi')
+var defaultJobs = require('./lib/jobs-default')
+var peerJobs = require('./lib/jobs-peer')
 var peerTest = require('./lib/peer-test')
 
 var NODE_VER = process.version
@@ -37,15 +37,15 @@ module.exports = function (opts) {
   dPackLog.use(function (state, bus) {
     bus.emit('render')
 
-    dPackLog.dpackEntry.on('down', function () {
+    dPackLog.dPackEntry.on('down', function () {
       menu.down()
       bus.render()
     })
-    dPackLog.dpackEntry.on('up', function () {
+    dPackLog.dPackEntry.on('up', function () {
       menu.up()
       bus.render()
     })
-    dPackLog.dpackEntry.once('enter', function () {
+    dPackLog.dPackEntry.once('enter', function () {
       state.selected = menu.selected()
       bus.render()
       startTests(state.selected)
@@ -58,9 +58,9 @@ module.exports = function (opts) {
   }
 
   function runBasic () {
-    var runTasks = dPackJobs(defaultTasks(opts))
-    views.push(runTasks.view)
-    dPackLog.use(runTasks.use)
+    var runJobs = dPackJobs(defaultJobs(opts))
+    views.push(runJobs.view)
+    dPackLog.use(runJobs.use)
     dPackLog.use(function (state, bus) {
       bus.once('done', function () {
         var testCountMsg = output(`
@@ -91,19 +91,19 @@ module.exports = function (opts) {
     if (opts.peerId) {
       opts.existingTest = true
       opts.id = opts.peerId
-      return startTasks()
+      return startJobs()
     }
 
     opts.existingTest = false
     opts.id = crypto.randomBytes(32).toString('hex')
-    startTasks()
+    startJobs()
 
-    function startTasks () {
-      var runTasks = dPackJobs(peerTasks(opts))
-      views.push(runTasks.view)
-      dPackLog.use(runTasks.use)
+    function startJobs () {
+      var runJobs = dPackJobs(peerJobs(opts))
+      views.push(runJobs.view)
+      dPackLog.use(runJobs.use)
       dPackLog.use(function (state, bus) {
-        // initial tasks done
+        // initial jobs done
         bus.once('done', function () {
           // TODO: Fix, overwriting previous line
           views.push(function () { return '\n' })
