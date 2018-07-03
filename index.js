@@ -37,15 +37,15 @@ module.exports = function (opts) {
   dPackLog.use(function (state, bus) {
     bus.emit('render')
 
-    dPackLog.input.on('down', function () {
+    dPackLog.entry.on('down', function () {
       menu.down()
       bus.render()
     })
-    dPackLog.input.on('up', function () {
+    dPackLog.entry.on('up', function () {
       menu.up()
       bus.render()
     })
-    dPackLog.input.once('enter', function () {
+    dPackLog.entry.once('enter', function () {
       state.selected = menu.selected()
       bus.render()
       startTests(state.selected)
