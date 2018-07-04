@@ -1,14 +1,14 @@
 Arguments: 
-  /Users/thejoker/.nvm/versions/node/v10.4.1/bin/node /usr/local/bin/yarn publish
+  /Users/thejoker/.nvm/versions/node/v10.5.0/bin/node /usr/local/bin/yarn
 
 PATH: 
-  /usr/local/opt/openssl/bin:/Users/thejoker/.nvm/versions/node/v10.4.1/bin:/usr/local/opt/postgresql@9.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/thejoker/.rvm/bin:/Users/thejoker/.rvm/bin
+  /usr/local/opt/openssl/bin:/usr/local/opt/postgresql@9.6/bin:/usr/local/opt/openssl/bin:/Users/thejoker/.nvm/versions/node/v10.5.0/bin:/usr/local/opt/postgresql@9.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/thejoker/.rvm/bin:/Users/thejoker/.rvm/bin:/Users/thejoker/.rvm/bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  10.4.1
+  10.5.0
 
 Platform: 
   darwin x64
@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
     "name": "@dpack/drsatoshi",
-    "version": "0.1.1",
+    "version": "0.2.7",
     "description": "Doctor of choice for the dWeb Network.",
     "contributors": [
       "Jared Rice Sr. <jared@dwebs.io>",
@@ -31,13 +31,13 @@ npm manifest:
       "satoshi": "cli.js"
     },
     "dependencies": {
-      "@distdns/server": "distdns/server#master",
-      "@dpack/logger": "dpacks/logger#master",
+      "@distdns/server": "*",
       "@dpack/jobs": "dpacks/jobs#master",
-      "@dwcore/channel": "distributedweb/channel#master",
+      "@dpack/logger": "dpacks/logger#master",
+      "@dwcore/channel": "dwcore/channel#master",
       "@dwcore/dethunk": "dwcore/dethunk#master",
-      "@flockcore/core": "flockcore/core#master",
-      "@flockcore/presets": "flockcore/presets#master",
+      "@flockcore/core": "*",
+      "@flockcore/presets": "*",
       "chalk": "^2.3.2",
       "debug": "^3.1.0",
       "figures": "^2.0.0",
@@ -56,14 +56,14 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:128791:13)
-      at Interface.emit (events.js:182:13)
-      at Interface._ttyWrite (readline.js:783:16)
-      at ReadStream.onkeypress (readline.js:168:10)
-      at ReadStream.emit (events.js:182:13)
-      at emitKeys (internal/readline.js:422:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1022:36)
-      at ReadStream.emit (events.js:182:13)
-      at addChunk (_stream_readable.js:283:12)
+  Error: Workspaces can only be enabled in private projects.
+      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at Config.getWorkspaces (/usr/local/lib/node_modules/yarn/lib/cli.js:40341:15)
+      at Config.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:40229:21)
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/usr/local/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at Config.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:95:12)
+      at Config.resolveWorkspaces (/usr/local/lib/node_modules/yarn/lib/cli.js:40296:21)

@@ -25,7 +25,7 @@ flock.on('listening', function () {
     console.log('Trying to connect to %s:%d', peer.host, peer.port)
   })
   flock.on('peer', function (peer) {
-    console.log('Discovered %s:%d', peer.host, peer.port)
+    console.log('Revelated %s:%d', peer.host, peer.port)
   })
   flock.on('connection', function (connection) {
     var data = crypto.randomBytes(16).toString('hex')
