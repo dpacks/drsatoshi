@@ -1,6 +1,6 @@
 {
   "name": "@dpack/drsatoshi",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Doctor of choice for the dWeb Network.",
   "contributors": [
     "Jared Rice Sr. <jared@dwebs.io>",
@@ -15,13 +15,13 @@
     "satoshi": "cli.js"
   },
   "dependencies": {
-    "@distdns/server": "distdns/server#master",
+    "@distdns/server": "*",
     "@dpack/jobs": "dpacks/jobs#master",
     "@dpack/logger": "dpacks/logger#master",
     "@dwcore/channel": "dwcore/channel#master",
     "@dwcore/dethunk": "dwcore/dethunk#master",
-    "@flockcore/core": "flockcore/core#master",
-    "@flockcore/presets": "flockcore/presets#master",
+    "@flockcore/core": "*",
+    "@flockcore/presets": "*",
     "chalk": "^2.3.2",
     "debug": "^3.1.0",
     "figures": "^2.0.0",
