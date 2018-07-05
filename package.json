@@ -1,6 +1,6 @@
 {
   "name": "@dpack/drsatoshi",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Doctor of choice for the dWeb Network.",
   "contributors": [
     "Jared Rice Sr. <jared@dwebs.io>",
@@ -16,17 +16,15 @@
   },
   "dependencies": {
     "@distdns/server": "*",
-    "@dpack/jobs": "dpacks/jobs#master",
-    "@dpack/logger": "dpacks/logger#master",
-    "@dwcore/channel": "dwcore/channel#master",
-    "@dwcore/dethunk": "dwcore/dethunk#master",
-    "@flockcore/core": "*",
+    "@flockcore/core": "^0.1.6",
     "@flockcore/presets": "*",
-    "chalk": "^2.3.2",
-    "debug": "^3.1.0",
     "figures": "^2.0.0",
     "menu-string": "^1.2.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "neat-log": "^2.1.1",
+    "neat-tasks": "^1.0.0",
+    "pump": "^3.0.0",
+    "thunky": "^1.0.1"
   },
   "publishConfig": {
     "access": "public"
